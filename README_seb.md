@@ -34,6 +34,8 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git pull <REMOTENAME> <BRANCHNAME> = tirer les modifications apportés depuis une branche distante.
 - git merge <BRANCHNAME> = fusionner la branche secondaire à la branche principale. (se mettre sur la branche principale avant de faire une fusion).
 - git push <REMOTENAME> --delete <BRANCHNAME> = supprimer une branche distante.
+- git push origin +ID_DE_TON_COMMIT^:master = revenir a un commit antérieur.
+- git reset --hard = reviens au dernier commit (penser à faire un git push)
 
 
 ### Pré-requis :
