@@ -36,6 +36,8 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git push <REMOTENAME> --delete <BRANCHNAME> = supprimer une branche distante.
 - git push origin +ID_DE_TON_COMMIT^:master = revenir a un commit antérieur.
 - git reset --hard = reviens au dernier commit (penser à faire un git push)
+- git tag v1.0 = attache une étiquette v1.0
+- git push origin v1.0 = push l'étiquette sur GitHub.
 
 
 ### Pré-requis :
