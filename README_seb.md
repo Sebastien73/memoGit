@@ -39,6 +39,7 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git tag v1.0 = attache une étiquette v1.0
 - git push origin v1.0 = push l'étiquette sur GitHub.
 - .gitignore = fichier caché dans le dossier local pour ignorer les fichiers que nous nous voulons pas commit ou pull etc...
+- git restore --staged <file> = si erreur lors d'une commande, apres un git status, on peux avoir l'option de restaurer un fichier et de refaire ADD puis COMMIT puis PUSH
 
 
 ### Pré-requis :
