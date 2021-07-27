@@ -43,7 +43,7 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git rm <file> = effacer le fichier selectionner.
 - git reset +id du commit = annulation de tous les commit jusqu'a celui selectionner.
 - git merge --abort == pour annuler le merge.
-
+- git log --oneline --decorate --graph = toutes activités par ligne / branches.
 
 ### Pré-requis :
 
