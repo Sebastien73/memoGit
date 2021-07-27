@@ -44,6 +44,7 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git reset +id du commit = annulation de tous les commit jusqu'a celui selectionner.
 - git merge --abort == pour annuler le merge.
 - git log --oneline --decorate --graph = toutes activités par ligne / branches.
+- git commit -m "fixes #+ID_ISSUES" = fermer une issues de github (issues = ticket).
 
 ### Pré-requis :
 
