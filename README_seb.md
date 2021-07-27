@@ -18,6 +18,7 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git init = a initialiser un dépôt (repository).
 - git status = voir si le répertoire est bien un dépôt (repository).
 - git add bonjour.txt = ajoute les changements du fichier bonjour.txt au dépôt avant de commit.
+- git add . = ajoute tous les changements fait par nous avant le commit.
 - git commit -m "Création du fichier bonjour" (modifications à l'historique du dépôt avec un court (m) message décrivant les mises à jour.)
 - git diff = afficher les différences entre le fichier actuel et la dernière version soumise.
 - git config --global user.username USerNamE = lié un nom d'utilisateur GitHub avec Git.
