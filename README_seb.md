@@ -42,6 +42,7 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git restore --staged <file> = si erreur lors d'une commande, apres un git status, on peux avoir l'option de restaurer un fichier et de refaire ADD puis COMMIT puis PUSH
 - git rm <file> = effacer le fichier selectionner.
 - git reset +id du commit = annulation de tous les commit jusqu'a celui selectionner.
+- git merge --abort == pour annuler le merge.
 
 
 ### Pré-requis :
