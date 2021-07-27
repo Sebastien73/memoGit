@@ -38,6 +38,7 @@ Ce fichier est un mémo pour l'utilisation de GIT bash.
 - git reset --hard = reviens au dernier commit (penser à faire un git push)
 - git tag v1.0 = attache une étiquette v1.0
 - git push origin v1.0 = push l'étiquette sur GitHub.
+- .gitignore = fichier caché dans le dossier local pour ignorer les fichiers que nous nous voulons pas commit ou pull etc...
 
 
 ### Pré-requis :
