@@ -34,12 +34,17 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - docker commit <ID_CONTAINER> <NOM_IMAGE>
 - docker ps = liste les dockers qui sont start
 - docker images = liste les images dockers crées.
+- docker rmi -f <NUMERO_ID_IMAGE> = suppresion d'une image docker
+- docker login = connexion avec son compte hub.docker (demandera l'id et le mot de passe de l'utilisateur)
+- docker tag <NOM_IMAGE>:<TAG_IMAGE> <NOM_UTILISATEUR>/<NOM_REPOSITORY>:<TAG_NAME> = duplication de l'image sur notre "compte utilisateur" (vérifier avec un docker ps pour voir si les images correspondent bien)
+- docker push <NOM_UTILISATEUR>/<NOM_REPOSITORY>:<TAG_NAME> = cela enverra l'image sur hub.docker
 
 - chmod 744 <NOM_FICHIER> = full permissions sur le fichier (READ/WRITE/EXECUTE)
 - chmod 600 <NOM_FICHIER> = permissions restreintes sur le fichier (READ/WRITE)
 
 - nano start.sh = créer un fichier dans lequel on peux indiquer une commande comme le docker run
 - ./start.sh = va executer le fichier avec la commande qui aura été indiqué à l'intérieure
+
 
 
 ### Pré-requis :
