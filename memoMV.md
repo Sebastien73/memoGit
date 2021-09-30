@@ -44,12 +44,20 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 
 - nano start.sh = créer un fichier dans lequel on peux indiquer une commande comme le docker run
 - ./start.sh = va executer le fichier avec la commande qui aura été indiqué à l'intérieure
-
+- passwd <NOM_UTILISATEUR> = changer le mot de passe d'un utilisateur
+- sudo groupadd <NOM_GROUPE> = création d'un groupe
+- groups <NOM_UTILISATEUR> = voir les groupes assignés à un utilisateur
+- getent group = voir la liste de tous les groupes
+- sudo groupdel groupname = supprimer un groupe
+- sudo chown :<NOM_GROUPE> <PATH_TO_FILE> = donner aux fichiers les droits pour un groupe
+- Include /etc/phpmyadmin/apache.conf ajouter cette ligne dans le fichier apache2.conf (fin du fichier) puis restart apache2 (si pas de docker)
+- nslookup <DOMAINE_NAME> = commande pour vérifier où pointe le nom de domaine (vérifier qu'il pointe sur l'ip de la machine virtuelle)
 
 
 ### Pré-requis :
 
 - Putty
+- ou WSL (system linux sous windows)
 
 ## Auteur :
 
