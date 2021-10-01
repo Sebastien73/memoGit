@@ -199,4 +199,4 @@ URL : Sur un plan technique, l'URL indique aux navigateurs (Internet Explorer, M
 
 ## Auteur :
 
-* **Sebastien73** _alias_ [@Seb](https://github.com/Sebastien73)
+* **Sebastien73** _alias_ [@Seb](https://github.com/Sebastien73))
