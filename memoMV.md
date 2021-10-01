@@ -191,6 +191,11 @@ DNS : Le serveur DNS (Domain Name System, ou Système de noms de domaine en fran
 
 URL : Sur un plan technique, l'URL indique aux navigateurs (Internet Explorer, Mozilla, Firefox, Safari, etc.) le chemin à emprunter pour accéder aux ressources contenues dans le World Wide Web.
 
+    1. protocole : https://
+    2. le sous domaine :  www.
+    3. le nom de domaine principal : mondomaine
+    4. le domaine de deuxième niveau : .com
+    5. le répertoire : /contact
 
 ### Pré-requis :
 
