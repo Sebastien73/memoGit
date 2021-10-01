@@ -36,6 +36,7 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - CTRL-C = stoppper la commande en cour
 - CTRL-E = retour au fin de la ligne
 - CTRL-R = recherche dans l'historique des commandes
+- CTRL-L = fais un clear de la console sans rien supprimer (la dernière ligne se met tout en haut)
 - !! = répéter la dernière commande
 
 
