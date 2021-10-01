@@ -72,7 +72,7 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - groups <NOM_UTILISATEUR> = voir les groupes assignés à un utilisateur
 - getent group = voir la liste de tous les groupes
 - sudo groupdel groupname = supprimer un groupe
-- sudo chown :<NOM_GROUPE> <PATH_TO_FILE> = donner aux fichiers les droits pour un groupe
+- sudo chown <NOM_UTILISATEUR>:<NOM_UTILISATEUR> <PATH_TO_FILE> = donner les droits a un utilisateur sur un fichier (propiétaire etc...)
 - Include /etc/phpmyadmin/apache.conf ajouter cette ligne dans le fichier apache2.conf (fin du fichier) puis restart apache2 (si pas de docker)
 - nslookup <DOMAINE_NAME> = commande pour vérifier où pointe le nom de domaine (vérifier qu'il pointe sur l'ip de la machine virtuelle)
 - tail -f /var/log/syslog = voir en temps réel les derniers événements d'un fichier de log
