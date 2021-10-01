@@ -6,8 +6,44 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 
 ## Commandes :
 
+*** Commandes de base : ***
+
+- ls : lister tous les fichiers présent dans un dossier
+- ls -a : lister tous les fichiers présent dans un dossier + les fichiers cachés
+- cd <PATH_TO_FILE> : se déplacer à l'endroit indiquer
+- cat <NOM_DU_FICHIER> : renvoi les infos d'un fichier (sans l'ouvrir)
+- mv <NOM_DU_FICHIER> <DESTINATION> : changer un fichier de place
+- touch <NOM_DU_FICHIER> : créer un fichier
+- rm <NOM_DU_FICHIER> : supprimer un fichier
+- mkdir <NOM_DU_DOSSIER> : création d'un dossier
+- rmdir <NOM_DU_DOSSIER> : suppression d'un dossier
+- nano <NOM_DU_FICHIER> : ouvrir un fichier avec l'editeur de texte nano
+- history : afficher l'historique des commandes déjà entrées
+- pwd : trouve le chemin du repertoire de travail où l'on se trouve actuellement
+- cp <NOM_DU_FICHIER> <DESTINATION>: copier un fichier vers un autre endroit
+- scp [autres options] [nom d'utilisateur source@IP]:/[dossier et nom de fichier] [nom d'utilisateur de destination@IP]:/[dossier de destination] = transfert de fichier en connexion SSH
+- find <NOM_DU_FICHIER/DIRECTORY> = trouver un fichier ou un dossier
+- locate <MOTS> = fait une recherche des fichier contenant un mot par exemple test, affichera tous les fichiers ayant test dans son nom
+- grep <MOTS> <NOM_DI_FICHIER> = fera une recherche dans le nom du fichier et trouvera le mots rechercher en affichant la ligne
+- sudo = permet d'effectuer des commandes qui nécessite des autorisations administrative
+- wall = permet l'envoi d'un message à tous les utilisateur connecté
+
+*** RACCOURCIS BASH : *** 
+
+- TAB = commençant à taper un nom de fichier, si celui-ci est présent dans le dossier où l'on se trouve, en appuyant sur TAB, le nom du fichier se completera tout seul.
+- fleche du haut = reviens sur la dernière commande entrée
+- CTRL-A = retour au début de la ligne
+- CTRL-C = stoppper la commande en cour
+- CTRL-E = retour au fin de la ligne
+- CTRL-R = recherche dans l'historique des commandes
+- !! = répéter la dernière commande
+
+
+*** COMMANDES : *** 
+
 - apt-get update = mettre a jour les installations.
 - apt-get upgrade = mettre à jour les versions d'installations.
+
 
 - apt install = installations des services.
     - apt install docker.io = installation de docker
@@ -23,9 +59,36 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - service <NOM_DU_SERVICE> status = voir si le service est lancé ou non
 - dpkg-reconfigure phpmyadmin = permet de reconfigurer phpmyadmin
 
-- adduser = ajout d'un utilisateur.
+- adduser <NOM_UTILISATEUR> = ajout d'un utilisateur.
+- adduser --force-badname <NOM_UTILISATEUR> = forcer le nom que l'on veux mettre pour un utilisateur
 - usermod -aG sudo <NOM_UTILISATEUR> = ajout des droits sudo à l'utilisateur.
 - usermod -aG docker <NOM_UTILISATEUR> = ajout des droits docker à l'utilisateur.
+
+- nano start.sh = créer un fichier dans lequel on peux indiquer une commande comme le docker run
+- ./start.sh = va executer le fichier avec la commande qui aura été indiqué à l'intérieure
+- passwd <NOM_UTILISATEUR> = changer le mot de passe d'un utilisateur
+- sudo groupadd <NOM_GROUPE> = création d'un groupe
+- groups <NOM_UTILISATEUR> = voir les groupes assignés à un utilisateur
+- getent group = voir la liste de tous les groupes
+- sudo groupdel groupname = supprimer un groupe
+- sudo chown :<NOM_GROUPE> <PATH_TO_FILE> = donner aux fichiers les droits pour un groupe
+- Include /etc/phpmyadmin/apache.conf ajouter cette ligne dans le fichier apache2.conf (fin du fichier) puis restart apache2 (si pas de docker)
+- nslookup <DOMAINE_NAME> = commande pour vérifier où pointe le nom de domaine (vérifier qu'il pointe sur l'ip de la machine virtuelle)
+- tail -f /var/log/syslog = voir en temps réel les derniers événements d'un fichier de log
+
+*** COMMANDES AUTORISATIONS DE FICHIERS : ***
+
+- chmod 644 <NOM_FICHIER> = Lecture, écriture pour le propriétaire / Lecture pour les autres
+- chmod 666 <NOM_FICHIER> = Lecture, écriture pour tout le monde (DECONSEILLER !!!!)
+- chmod 700 <NOM_FICHIER> = Lecture, écriture, execution juste pour le propriétaire
+- chmod 705 <NOM_FICHIER> = Le propriétaire à tous les droits / Le groupe aucun / Les autres lire et executer
+- chmod 755 <NOM_FICHIER> = Le propriétaire à tous les droits / Les autres lire et executer
+- chmod 764 <NOM_FICHIER> = Tous droits pour le propriétaire / Lecture, écriture pour le groupe / Lecture seule pour les autres
+- chmod 774 <NOM_FICHIER> = Tous les droits pour le propriétaire et le groupe / Lecture seule pour les autres
+- chmod 775 <NOM_FICHIER> = Tous les droits pour le propriétaire et le groupe / Lecture et exécution pour les autres
+- chmod 777 <NOM_FICHIER> = Tous les droits pour tous (FORTEMENT DECONSEILLER !!!!)
+
+*** COMMANDES DOCKER : ***
 
 - nano Dockerfile = création d'un fichier qui servira à la construction d'une image. (FROM ubuntu:20.04 RUN apt-get update -yq \ && apt-get install curl gnupg -yq ADD . /app/ WORKDIR /app)
 - nano .dockerignore = création d'un fichier (équivalent à un .gitignore)
@@ -39,19 +102,21 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - docker tag <NOM_IMAGE>:<TAG_IMAGE> <NOM_UTILISATEUR>/<NOM_REPOSITORY>:<TAG_NAME> = duplication de l'image sur notre "compte utilisateur" (vérifier avec un docker ps pour voir si les images correspondent bien)
 - docker push <NOM_UTILISATEUR>/<NOM_REPOSITORY>:<TAG_NAME> = cela enverra l'image sur hub.docker
 
-- chmod 744 <NOM_FICHIER> = full permissions sur le fichier (READ/WRITE/EXECUTE)
-- chmod 600 <NOM_FICHIER> = permissions restreintes sur le fichier (READ/WRITE)
+*** CODES HTTP : ***
 
-- nano start.sh = créer un fichier dans lequel on peux indiquer une commande comme le docker run
-- ./start.sh = va executer le fichier avec la commande qui aura été indiqué à l'intérieure
-- passwd <NOM_UTILISATEUR> = changer le mot de passe d'un utilisateur
-- sudo groupadd <NOM_GROUPE> = création d'un groupe
-- groups <NOM_UTILISATEUR> = voir les groupes assignés à un utilisateur
-- getent group = voir la liste de tous les groupes
-- sudo groupdel groupname = supprimer un groupe
-- sudo chown :<NOM_GROUPE> <PATH_TO_FILE> = donner aux fichiers les droits pour un groupe
-- Include /etc/phpmyadmin/apache.conf ajouter cette ligne dans le fichier apache2.conf (fin du fichier) puis restart apache2 (si pas de docker)
-- nslookup <DOMAINE_NAME> = commande pour vérifier où pointe le nom de domaine (vérifier qu'il pointe sur l'ip de la machine virtuelle)
+- 200 : succès de la requête 
+- 301 et 302 : redirection, respectivement permanente et temporaire 
+- 404 : page non trouvée 
+- 500 et 503 : erreur serveur 
+- 504 : le serveur n’a pas répondu 
+
+*** DNS ? ***
+
+DNS : Le serveur DNS (Domain Name System, ou Système de noms de domaine en français) est un service dont la principale fonction est de traduire un nom de domaine en adresse IP. Pour simplifier, le serveur DNS agit comme un annuaire que consulte un ordinateur au moment d'accéder à un autre ordinateur via un réseau. Autrement dit, le serveur DNS est ce service qui permet d'associer à site web (ou un ordinateur connecté ou un serveur) une adresse IP, comme un annuaire téléphonique permet d'associer un numéro de téléphone à un nom d'abonné. 
+
+*** URL ? ***
+
+URL : Sur un plan technique, l'URL indique aux navigateurs (Internet Explorer, Mozilla, Firefox, Safari, etc.) le chemin à emprunter pour accéder aux ressources contenues dans le World Wide Web.
 
 
 ### Pré-requis :
