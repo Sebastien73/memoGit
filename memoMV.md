@@ -27,6 +27,7 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - grep <MOTS> <NOM_DI_FICHIER> = fera une recherche dans le nom du fichier et trouvera le mots rechercher en affichant la ligne
 - sudo = permet d'effectuer des commandes qui nécessite des autorisations administrative
 - wall = permet l'envoi d'un message à tous les utilisateur connecté
+- write <NOM_UTILISATEUR> = envoyez un message à un utilisateur en particulier
 
 *** RACCOURCIS BASH : *** 
 
@@ -172,7 +173,6 @@ Source des infos, si besoin : https://lecrabeinfo.net/se-connecter-en-ssh-par-ec
 
 - sudo apt install dos2unix
 - sudo apt update
-
 - sudo dos2unix <NOM_DU_FICHIER>
 
 *** CODES HTTP : ***
@@ -193,9 +193,13 @@ URL : Sur un plan technique, l'URL indique aux navigateurs (Internet Explorer, M
 
     1. protocole : https://
     2. le sous domaine :  www.
-    3. le nom de domaine principal : mondomaine
-    4. le domaine de deuxième niveau : .com
+    3. le nom de domaine principal (2eme niveau) : mondomaine
+    4. le domaine de premier niveau : .com
     5. le répertoire : /contact
+    6. # = ancre
+    7. ? = parametres
+    8. :80 || :443 = port utilisé pour accéder au ressources du serveur
+
 
 ### Pré-requis :
 
