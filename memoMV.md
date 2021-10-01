@@ -28,6 +28,9 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - sudo = permet d'effectuer des commandes qui nécessite des autorisations administrative
 - wall = permet l'envoi d'un message à tous les utilisateur connecté
 - write <NOM_UTILISATEUR> = envoyez un message à un utilisateur en particulier
+- help = afficher une liste de toutes les commandes intégrées.
+- help <COMMANDES> =  afficher une courte description de la commande correspondante.
+
 
 *** RACCOURCIS BASH : *** 
 
@@ -37,7 +40,8 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - CTRL-C = stoppper la commande en cour
 - CTRL-E = retour au fin de la ligne
 - CTRL-R = recherche dans l'historique des commandes
-- CTRL-L = fais un clear de la console sans rien supprimer (la dernière ligne se met tout en haut)
+- exit = CTRL-D = termine la session en cours et ferme le terminal
+- clear = CTRL-L = fais un clear de la console sans rien supprimer (la dernière ligne se met tout en haut)
 - !! = répéter la dernière commande
 
 
