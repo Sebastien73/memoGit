@@ -109,7 +109,8 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - docker push <NOM_UTILISATEUR>/<NOM_REPOSITORY>:<TAG_NAME> = cela enverra l'image sur hub.docker
 
 *** CREER CERTIFICAT SSL pour sécuriser son site : ***
-
+ 
+- https://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl
 - sudo a2enmod ssl = installation du module ssl pour que le protocole TLS fonctionne
 - sudo systemctl restart apache2 = redémarrer le service apache2
 - apache2ctl -M | grep ssl = vérification de l'activation du module
