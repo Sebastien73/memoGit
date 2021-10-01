@@ -167,6 +167,14 @@ Cela vous connectera sur le serveur distant avec votre clef SSH. (Si une passphr
 
 Source des infos, si besoin : https://lecrabeinfo.net/se-connecter-en-ssh-par-echange-de-cles-ssh.html#se-connecter-en-ssh-par-echange-de-cles-ssh
 
+
+*** Convertir fichier format windows au format unix : *** 
+
+- sudo apt install dos2unix
+- sudo apt update
+
+- sudo dos2unix <NOM_DU_FICHIER>
+
 *** CODES HTTP : ***
 
 - 200 : succès de la requête 
