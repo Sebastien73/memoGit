@@ -127,7 +127,45 @@ Ensuite il faudras modifier les virtuals hosts pour que le port 80 renvoi sur le
 
 Retournez sur le navigateur, si cela a fonctionner le site est sécurisé.
 
+*** Generer et se connecter par clef SSH : ***
 
+- ssh-keygen -t ed25519
+ Cela va donner : Generating public/private ed25519 key pair.
+ Laisser le premier champs demandé vide = Enter file in which to save the key:
+ Enter passphrase (empty for no passphrase) = ce que vous voulez (cela va securisez votre clef), laissez vide si vous ne voulez pas mettre de sécurité supplémentaire
+ Enter same passphrase again = répétez si vous avez entré quelque chose précedemment
+
+ Le message suivant devrais apparaître : 
+
+ Your identification has been saved in C:\Users\Pierre\.ssh\id_ed25519.
+Your public key has been saved in C:\Users\Pierre\.ssh\id_ed25519.pub.
+The key fingerprint is:
+SHA256:4Yjb63lZzyRw+ADKaZ6nwZDA7jBrtorVR4mkgXRGWN0 pierre@DESKTOP-VJATO16
+The key's randomart image is:
++--[ED25519 256]--+
+|..+=. .          |
+|o+o  ..E         |
+|o..o.o ...       |
+|o.o+=o ++..      |
+|oo.=o.+ S=       |
+|.+ .=+.   + .    |
+|o o o+o  o =     |
+|.o  .. oo   o    |
+|+    .+.         |
++----[SHA256]-----
+
+Votre clef est bien générée.
+
+- ssh-copy-id <NOM_UTILISATEUR>@<IP_SERVEUR>
+- Entrez le mot de passe utilisateur 
+
+Voilà, votre clé publique a bien été copiée dans le fichier ~/.ssh/authorized_keys de l’utilisateur sur le serveur distant.
+
+- ssh <NOM_UTILISATEUR>@<IP_SERVEUR>
+
+Cela vous connectera sur le serveur distant avec votre clef SSH. (Si une passphrase a été indiqué, alors le serveur distant la demandera avant de vous connecter)
+
+Source des infos, si besoin : https://lecrabeinfo.net/se-connecter-en-ssh-par-echange-de-cles-ssh.html#se-connecter-en-ssh-par-echange-de-cles-ssh
 
 *** CODES HTTP : ***
 
