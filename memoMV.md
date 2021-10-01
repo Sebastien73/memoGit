@@ -102,6 +102,32 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - docker tag <NOM_IMAGE>:<TAG_IMAGE> <NOM_UTILISATEUR>/<NOM_REPOSITORY>:<TAG_NAME> = duplication de l'image sur notre "compte utilisateur" (vérifier avec un docker ps pour voir si les images correspondent bien)
 - docker push <NOM_UTILISATEUR>/<NOM_REPOSITORY>:<TAG_NAME> = cela enverra l'image sur hub.docker
 
+*** CREER CERTIFICAT SSL pour sécuriser son site : ***
+
+- sudo a2enmod ssl = installation du module ssl pour que le protocole TLS fonctionne
+- sudo systemctl restart apache2 = redémarrer le service apache2
+- apache2ctl -M | grep ssl = vérification de l'activation du module
+- sudo apt update = mettre à jour les paquets
+- sudo apt install software-properties-common = installation de service software-properties-common
+- sudo apt update = mettre à jour les paquets
+- sudo apt install certbot = installation du service CERTBOT
+
+- sudo certbot certonly --webroot -w /var/www/html/<NOM_DU_DIRECTORY> -d <NOM_SOUS_DOMAINE_+_NOM_DE_DOMAINE> -d <www.NOM_SOUS_DOMAINE_+_NOM_DE_DOMAINE>
+
+Si la commande à bien fonctionnée, cela doit nous renvoyer un message contenant :
+
+CONGRATULATIONS !! 
+
+et les chemins des clefs public/priver
+
+Ensuite il faudras modifier les virtuals hosts pour que le port 80 renvoi sur le port 443 automatiquement, modifier le chemin des clefs existant par ceux indiquer par la commande faite préalablement.
+
+- sudo systemctl restart apache2 = redémarrer le service apache2
+
+Retournez sur le navigateur, si cela a fonctionner le site est sécurisé.
+
+
+
 *** CODES HTTP : ***
 
 - 200 : succès de la requête 
