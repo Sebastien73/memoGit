@@ -205,6 +205,16 @@ URL : Sur un plan technique, l'URL indique aux navigateurs (Internet Explorer, M
     7. ? = parametres
     8. :80 || :443 = port utilisé pour accéder au ressources du serveur
 
+*** Faille XSS / Injection SQL : *** 
+
+Faill XSS : 
+
+Injection de code html ou JS directement au navigateur internet. Redirection vers un autre site, vol de cookies, modification du code HTML de la page, exécution d'exploits contre le navigateur.
+
+Injection SQL : 
+
+Permet d'injecter dans la requête SQL en cours un morceau de requête non prévue par le systéme et pouvant en compromettre la sécurité. 
+
 
 ### Pré-requis :
 
@@ -213,8 +223,4 @@ URL : Sur un plan technique, l'URL indique aux navigateurs (Internet Explorer, M
 
 ## Auteur :
 
-<<<<<<< HEAD
 * **Sebastien73** _alias_ [@Seb](https://github.com/Sebastien73)
-=======
-* **Sebastien73** _alias_ [@Seb](https://github.com/Sebastien73))
->>>>>>> 7a0c23c1fbb8f6e04c6b1e9a79f835a460956b2d
