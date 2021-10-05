@@ -113,11 +113,13 @@ Ce fichier est un mémo pour l'utilisation d'une machine virtuelle.
 - https://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl
 - sudo a2enmod ssl = installation du module ssl pour que le protocole TLS fonctionne
 - sudo systemctl restart apache2 = redémarrer le service apache2
-- apache2ctl -M | grep ssl = vérification de l'activation du module
+- apache2ctl -M | grep ssl = vérification de l'activation du module                                      *** <---- A FAIRE UNIQUEMENT A L'INSTALLATION DE CERTBOT !! ***
 - sudo apt update = mettre à jour les paquets
 - sudo apt install software-properties-common = installation de service software-properties-common
 - sudo apt update = mettre à jour les paquets
 - sudo apt install certbot = installation du service CERTBOT
+
+
 
 - sudo certbot certonly --webroot -w /var/www/html/<NOM_DU_DIRECTORY> -d <NOM_SOUS_DOMAINE_+_NOM_DE_DOMAINE> -d <www.NOM_SOUS_DOMAINE_+_NOM_DE_DOMAINE>
 
@@ -173,6 +175,53 @@ Cela vous connectera sur le serveur distant avec votre clef SSH. (Si une passphr
 
 Source des infos, si besoin : https://lecrabeinfo.net/se-connecter-en-ssh-par-echange-de-cles-ssh.html#se-connecter-en-ssh-par-echange-de-cles-ssh
 
+*** CREATION D'UN VIRTUAL HOST : ***
+
+- aller dans son dossier /var/www/html/<NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE> 
+
+- créer son dossier avec "sudo mkdir -p /var/www/html/exemple.com" (Si le dossier n'existe pas)
+
+             ---CREATION VIRTUALHOST---
+
+- aller dans /etc/apache2/sites-available
+
+- créer <NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>.conf et mettre ceci à l'intérieure :
+
+
+
+
+- CONTENU DU FICHIER <NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>.conf
+
+<VirtualHost *:80>  (Port 80 pour protocole HTTP)
+    ServerName exemple.com (Ici ce sera le nom qui apparaîtra dans l'URL du navigateur)
+    ServerAlias www.exemple.com (facultatif pour l'instant, utile plus tard pour https)
+    ServerAdmin webmaster@exemple.com (facultatif pour l'instant, utile plus tard pour https)
+    DocumentRoot /var/www/html/<NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>
+
+    <Directory /var/www/html/<NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/<NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>-error.log
+    CustomLog ${APACHE_LOG_DIR}/<NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>-access.log combined
+</VirtualHost>
+
+- CONTENU DU FICHIER <NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>.conf
+
+
+
+- Avec la commande : sudo a2ensite <NOM_DU_DOSSIER_CONTENANT_VOTRE_CODE>, cela va créer le même fichier .conf que dans sites-available, dans le dossier sites-enabled.
+Par là suite si des mofidifications sont apportées à l'un ou l'autre, cela se fera automatiquement dans le fichier opposé.
+
+
+- Tester la configuration avec : sudo apachectl configtest
+	si l'ouput est "Syntax OK", c'est que tout est bon.
+
+- Redémarrer votre service apache2 alors avec : sudo systemctl restart apache2.
+
+- Taper dans votre navigateur http://exemple.com/, vous devriez avoir votre landingpage (index.php/index.html) s'afficher dans votre navigateur.
+
 
 *** Convertir fichier format windows au format unix : *** 
 
@@ -214,6 +263,8 @@ Injection de code html ou JS directement au navigateur internet. Redirection ver
 Injection SQL : 
 
 Permet d'injecter dans la requête SQL en cours un morceau de requête non prévue par le systéme et pouvant en compromettre la sécurité. 
+
+
 
 
 ### Pré-requis :
