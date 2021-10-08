@@ -264,8 +264,20 @@ Injection SQL :
 
 Permet d'injecter dans la requête SQL en cours un morceau de requête non prévue par le systéme et pouvant en compromettre la sécurité. 
 
+*** MEMO MARKDOWN : ***
 
+ - # = Titre de niv1
+ - ## = Titre de niv2
+ - ### = Titre de niv3 (etc...)
 
+ - > = Faire une citation
+ - ``` javascript ``` = Faire en place la couleur des balises par rapport au code (backtick)
+ - [lien.com] (https://jesuisperdu.com) 
+ - ![maphoto] (./moi.jpg)
+
+ - pandoc -t html <NOM_DU_DOC>.html <NOM_DU_DOC_ORIGINAL> = transforme le .md en .html
+
+Quelques autres commandes : https://www.ionos.fr/digitalguide/sites-internet/developpement-web/markdown/
 
 ### Pré-requis :
 
