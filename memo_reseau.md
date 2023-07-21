@@ -169,3 +169,7 @@ COMMANDES
 * Utilitaire de script en ligne de commande
   * Qui permet localement ou a distance, d'afficher ou de modifier la configuration réseau d'un ordinateur en cours d'exécution
   * Utilisé sans paramètres, netsh ouvre l'invite de commandes Netsh.exe (c-à-d netsh)
+* Afficher et modifier les entrées dans le cache ARP (Address Resolution Protocol) 
+  * affiche les table de cache ARP actuelles pour toutes interfaces
+    * arp -a
+      * ![img_13.png](img_13.png)
