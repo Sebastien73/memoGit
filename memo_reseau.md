@@ -142,6 +142,8 @@ COMMANDES
       * ![img_3.png](img_3.png)
     * ex : ping 172.22.114.119 (ping de la machine de maher) (machine non accessible)
       * ![img_4.png](img_4.png)
+    * ex : ping 8.8.8.8 (service DNS Google répondant aux pings)
+      * ![img_12.png](img_12.png)
 * Faire un ping persistant
   * ping -t <IP_DE_LA_MACHINE_CIBLE>
     * ex : ping -t ping 172.22.144.1 (passerelle)
