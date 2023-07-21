@@ -142,13 +142,28 @@ COMMANDES
       * ![img_3.png](img_3.png)
     * ex : ping 172.22.114.119 (ping de la machine de maher) (machine non accessible)
       * ![img_4.png](img_4.png)
+* Faire un ping persistant
+  * ping -t <IP_DE_LA_MACHINE_CIBLE>
+    * ex : ping -t ping 172.22.144.1 (passerelle)
+      * ![img_11.png](img_11.png)
+* Savoir le ou les chemins disponible pour accéder à la machine cible
   * tracert <IP_DE_LA_MACHINE_CIBLE>
     * ex : tracert 172.22.114.1 (passerelle)
       * ![img_5.png](img_5.png)
     * ex : tracert 172.22.114.119 (machine maher)
       * ![img_6.png](img_6.png)
+*  Pour déterminer le chemin le plus direct à la machine cible
   * pathping <IP_DE_LA_MACHINE>
     * ex : pathping 172.22.114.1 (passerelle)
       * ![img_7.png](img_7.png)
     * ex : pathping 172.22.114.119 (maher)
       * ![img_8.png](img_8.png)
+*  lister les routages entre les sous réseaux
+  * route 
+    * ![img_9.png](img_9.png)
+*  lister les connexions en cours sur la machine locale
+  * netstat
+    * ![img_10.png](img_10.png)
+* Utilitaire de script en ligne de commande
+  * Qui permet localement ou a distance, d'afficher ou de modifier la configuration réseau d'un ordinateur en cours d'exécution
+  * Utilisé sans paramètres, netsh ouvre l'invite de commandes Netsh.exe (c-à-d netsh)
