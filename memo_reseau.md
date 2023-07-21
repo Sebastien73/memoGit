@@ -41,7 +41,7 @@ Qu'est-ce qu'un modèle OSI ?
         - RESEAU -> ajoute un numéro d'ordre et des informations d'adressage au paquet
         - TRANSPORT -> ajoute des infos pour le traitement des erreurs des paquets
         - SESSION -> ajoute des infos de flux pour indiquer le départ d'un paquet
-        - PRESENTATION -> ajoute des infos de formatage, d'affichage, de cryptage
+        - PRESENTATION -> ajoute des infos de formatage, d'affichage, de chiffrement
         - APPLICATION -> initie ou accepte une requête réseau
 
 ***
@@ -52,7 +52,7 @@ Qu'est-ce que le protocole IP (Internet Protocol) (faisant partie de la couche r
     - Il peut être utilisé avec plusieurs protocles de transport (notamment TCP / UDP)
     
     - Son rôle ? :
-        - C'est un des protocoles le splus importants d'internet, car :
+        - C'est un des protocoles les plus importants d'internet, car :
             - il permet l'élaboration et le transport des paquets de données
 
 ***
@@ -117,3 +117,38 @@ Qu'est-ce qu'Internet ?
         - le ftp
         - la messagerie
         - les groupes de discussions
+
+
+****
+COMMANDES 
+****
+
+* ipconfig
+* ![img.png](img.png)
+  * Permet d'avoir toutes les caractèristique de la machine sur laquelle on se trouve. 
+  * Suffixe DNS propre à la connexion 
+  * Adresse IPv6 : Même fonction que IPv4 sauf que les éléments sont plus agrégés.
+  * Adresse IPv4 : Adresse ip de la machine utilisée sur le réseau ou elle se trouve
+  * Masque de sous-réseau : Comparer les nombres demandés pour savoir sur quel réseau on se trouve
+  * Passerelle par défaut : Sert a pouvoir remonter sur le réseau du dessus.
+
+
+* ![img_1.png](img_1.png)
+  * Permet d'avoir toutes les caractéristiques des connexions réseaux (adresse IP, adresse MAC...) 
+
+* Savoir si une machine est accesible ou non :
+  * ping <IP_DE_LA_MACHINE_CIBLE>
+    * ex : ping 172.22.144.1 (ping de la passerelle) (machine accessible)
+      * ![img_3.png](img_3.png)
+    * ex : ping 172.22.114.119 (ping de la machine de maher) (machine non accessible)
+      * ![img_4.png](img_4.png)
+  * tracert <IP_DE_LA_MACHINE_CIBLE>
+    * ex : tracert 172.22.114.1 (passerelle)
+      * ![img_5.png](img_5.png)
+    * ex : tracert 172.22.114.119 (machine maher)
+      * ![img_6.png](img_6.png)
+  * pathping <IP_DE_LA_MACHINE>
+    * ex : pathping 172.22.114.1 (passerelle)
+      * ![img_7.png](img_7.png)
+    * ex : pathping 172.22.114.119 (maher)
+      * ![img_8.png](img_8.png)
