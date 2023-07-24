@@ -208,9 +208,32 @@ Commande sous linux
 *  lister les routages entre les sous réseaux
   * ip route => équivalent route
     * ![route_linux](image-3.png)
-    
+
 *  lister les connexions en cours sur la machine locale
   * netstat -r => équivalent netstat
     * ![netstat_linux](image-4.png)
 
 
+***
+NMAP
+***
+
+* Analyse du système d'exploitation : 
+  * nmap -O <IP_DE_LA_MACHINE_CIBLE> 
+   * sudo nmap -O -Pn 172.22.114.185
+   * ![os_details_linux](image-6.png)
+
+
+*** 
+COMPETENCES
+***
+
+* chemin pour accéder au site du campus depuis ma machine
+  * mtr le-campus-numerique.fr
+    * ![path_to_web1](image-7.png)
+  * mtr -n le -campus-numerique.fr (flag -n => ne montre que les ips)
+    * ![path_to_web2](image-8.png)
+
+* schema architecture réseau :
+
+  * passerelle -> réseaux -> machine (client)
