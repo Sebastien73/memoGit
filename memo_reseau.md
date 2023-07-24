@@ -120,7 +120,7 @@ Qu'est-ce qu'Internet ?
 
 
 ****
-COMMANDES 
+COMMANDES SOUS WINDOWS
 ****
 
 * ipconfig
@@ -146,7 +146,7 @@ COMMANDES
       * ![img_12.png](img_12.png)
 * Faire un ping persistant
   * ping -t <IP_DE_LA_MACHINE_CIBLE>
-    * ex : ping -t ping 172.22.144.1 (passerelle)
+    * ex : ping -t 172.22.144.1 (passerelle)
       * ![img_11.png](img_11.png)
 * Savoir le ou les chemins disponible pour accéder à la machine cible
   * tracert <IP_DE_LA_MACHINE_CIBLE>
@@ -173,3 +173,44 @@ COMMANDES
   * affiche les table de cache ARP actuelles pour toutes interfaces
     * arp -a
       * ![img_13.png](img_13.png)
+
+
+***
+Commande sous linux 
+***
+
+* ifconfig => équivalent ipconfig
+  * ![ipconfig_linux](image.png)
+  * Permet d'avoir toutes les caractèristique de la machine sur laquelle on se trouve.  
+  * inet6 : Même fonction que IPv4 sauf que les éléments sont plus agrégés.
+  * inet : Adresse ip de la machine utilisée sur le réseau ou elle se trouve
+  * netmask : Comparer les nombres demandés pour savoir sur quel réseau on se trouve
+  * broadcast : Sert a pouvoir remonter sur le réseau du dessus.
+
+* Savoir si une machine est accesible ou non :
+  * Ping ipv4 :
+    * ping <IP_DE_LA_MACHINE_CIBLE>
+      * ex : ping 172.22.114.255
+      *  ![ping_broadcast](image-1.png)
+
+* Savoir le ou les chemins disponible pour accéder à la machine cible
+  * traceroute => équivalent tracert
+    * traceroute <IP_DE_LA_MACHINE_CIBLE> 
+      * ex : traceroute 172.22.114.185
+        * ![Alt text](image-2.png)
+ 
+*  Pour déterminer le chemin le plus direct à la machine cible
+  * mtr => équivalent pathping
+    * mtr <IP_DE_LA_MACHINE_CIBLE> 
+      * mtr 172.22.114.185
+      * ![pathping_linux](image-5.png)
+
+*  lister les routages entre les sous réseaux
+  * ip route => équivalent route
+    * ![route_linux](image-3.png)
+    
+*  lister les connexions en cours sur la machine locale
+  * netstat -r => équivalent netstat
+    * ![netstat_linux](image-4.png)
+
+
