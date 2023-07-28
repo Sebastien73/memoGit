@@ -237,3 +237,19 @@ COMPETENCES
 * schema architecture réseau :
 
   * passerelle -> réseaux -> machine (client)
+
+
+***
+VOCABULAIRE ITERATION ENV DE PROD
+***
+
+* Single Point of Entry
+  * Sécuriser une infrastructure avec un seul point d'entrée. Permet de sécuriser et de minimiser les failles !!
+
+* WhiteList
+  * Lister les machines autoriser à entrée dans quelque chose.
+
+* BlackList
+  * Lister les machines non autoriser à entrée dans quelque chose.
+
+  
