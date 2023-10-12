@@ -76,4 +76,4 @@ SET IN BOTH CONTAINERS
     - Lancer un conteneur phpmyadmin lié au conteneur mysql 
     - docker run -e PMA_HOST=wordpressdb -e MYSQL_ROOT_PASSWORD=123 -p 8081:80 --link wordpressdb:db --name myphpmyadmin -d phpmyadmin
 
-172.22.114.77
+    (- ip yan -> 172.22.114.77)
