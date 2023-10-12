@@ -71,6 +71,7 @@ SET IN BOTH CONTAINERS
 
     - Lancer un conteneur wordpress avec des variable d'environnement, port spécific, bind volume site avec /var/www/html, 
     lié le conteneur wordpress au conteneur mysql
+    - source : ( https://docs.phpmyadmin.net/en/latest/setup.html#installing-using-docker )
     - docker run -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=123 -e WORDPRESS_DB_NAME=wordpress_db -p 8080:80 -v site:/var/www/html --link wordpressdb:mysql --name wordpress -d wordpress
 
     - Lancer un conteneur phpmyadmin lié au conteneur mysql 
