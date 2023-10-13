@@ -77,4 +77,27 @@ SET IN BOTH CONTAINERS
     - Lancer un conteneur phpmyadmin lié au conteneur mysql 
     - docker run -e PMA_HOST=wordpressdb -e MYSQL_ROOT_PASSWORD=123 -p 8081:80 --link wordpressdb:db --name myphpmyadmin -d phpmyadmin
 
-    (- ip yan -> 172.22.114.77)
+*** 
+BUILD DOCKERFILE
+***
+    ( Voir fichier .dockerenv pour les variables d'environnements et le Dockerfile )
+
+    - Un conteneur utilisant mariadb -> docker run -v data-db:/var/lib/mysql --name mariadb -d -p 33060:3306 mariadb
+    - Un Dockerfile : 
+        - FROM alpine / debian / ubuntu ...
+        - set variable d'environnement pour l'utilisation de mariadb
+        - script py  -> ADD / CP path_hôte path-container
+        - cmd ["script"] 
+    - docker build -t name_perso_image_build
+    - second container -> docker run --name conndb -d name_perso_image_build ( ajout des paramètre -e avec les variables finales ou --env-file .dockerenv ) 
+
+
+    - Creation d'un fichier Dockerfile
+        - Creation d'un conteneur mariadb avec la dernière version / variables d'environnements / exposition du port / volume utilisé
+
+    - Une fois le dockerfile configurer on construit une image grâce à lui
+        - docker build -t test_dockerfile . ( -t permet de nommer l'image qui se créée à partir du Dockerfile et le . spécifie l'emplacement du fichier Dockerfile (ici répertoire courant))
+        - docker images pour vérifier que l'image est bien créée.
+
+    - Une fois l'image créée, on lance un container 
+        - docker run --env-file .dockerenv --name <NOM_DU_CONTENEUR> -d <NOM_DE_IMAGE_UTILISER>
