@@ -22,3 +22,22 @@ Run a gitlab-runner container
         -v gitlab-runner:/etc/gitlab-runner \
         -v docker.sock:/var/run/docker.sock \
         gitlab/gitlab-runner:latest
+
+***
+Test CI in local
+***
+
+    - docker run -it -v <PATH_HOST>:/code -w /code <IMAGE_NAME> bash
+
+***
+Add variable in project Gitlab
+***
+
+    - Settings > CI/CD > Variables > Add variable
+
+***
+Execute a job with schedule
+***
+
+    - Add a new schedule in gitlab with a variable and value
+    - Add rule in jobs for choose when he will be execute
