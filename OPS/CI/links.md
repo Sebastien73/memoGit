@@ -28,7 +28,8 @@ Test CI in local
 ***
 
     - docker run -it -v <PATH_HOST>:/code -w /code <IMAGE_NAME> bash
-
+        - example : 
+            - docker run -it -v $PWD:/code -w /code seb7318/seb:v3 bash
 ***
 Add variable in project Gitlab
 ***
